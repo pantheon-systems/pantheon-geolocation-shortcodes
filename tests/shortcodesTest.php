@@ -55,6 +55,9 @@ class shortcodesTests extends TestCase {
 		);
 	}
 
+	/**
+	 * Test the get_continent function.
+	 */
 	public function testGetContinent() {
 		$this->assertEquals(
 			Shortcodes\get_continent(),
@@ -63,6 +66,9 @@ class shortcodesTests extends TestCase {
 		);
 	}
 
+	/**
+	 * Test the get_country function.
+	 */
 	public function testGetCountry() {
 		$this->assertEquals(
 			Shortcodes\get_country(),
@@ -71,6 +77,9 @@ class shortcodesTests extends TestCase {
 		);
 	}
 
+	/**
+	 * Test the get_region function.
+	 */
 	public function testGetRegion() {
 		$this->assertEquals(
 			Shortcodes\get_region(),
@@ -79,6 +88,9 @@ class shortcodesTests extends TestCase {
 		);
 	}
 
+	/**
+	 * Test the get_city function.
+	 */
 	public function testGetCity() {
 		$this->assertEquals(
 			Shortcodes\get_city(),
@@ -88,7 +100,9 @@ class shortcodesTests extends TestCase {
 	}
 
 	/**
-	 * @skip
+	 * Test the get_postal_code function.
+	 *
+	 * This parameter is not currently supported by the Edge Integrations plugin.
 	 */
 	public function testGetPostalCode() {
 		$postal_code = Geo\get_geo( 'postal-code' );
@@ -105,6 +119,11 @@ class shortcodesTests extends TestCase {
 		);
 	}
 
+	/**
+	 * Test the get_latitude function.
+	 *
+	 * This parameter is not currently supported by the Edge Integrations plugin.
+	 */
 	public function testGetLatitude() {
 		$latitude = Geo\get_geo( 'lat' );
 
@@ -120,6 +139,11 @@ class shortcodesTests extends TestCase {
 		);
 	}
 
+	/**
+	 * Test the get_longitude function.
+	 *
+	 * This parameter is not currently supported by the Edge Integrations plugin.
+	 */
 	public function testGetLongitude() {
 		$longitude = Geo\get_geo( 'lon' );
 
@@ -135,6 +159,9 @@ class shortcodesTests extends TestCase {
 		);
 	}
 
+	/**
+	 * Test the get_shortcodes function.
+	 */
 	public function testGetShortcodes() {
 		$shortcodes = [
 			'continent' => 'geoip-continent',
