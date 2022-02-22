@@ -178,4 +178,59 @@ class shortcodesTests extends TestCase {
 			'get_shortcodes() function should match the expected shortcodes.'
 		);
 	}
+
+	/**
+	 * Test the do_shortcode_continent function.
+	 */
+	public function testDoShortcodeContinent() {
+		$this->assertEquals(
+			Shortcodes\do_shortcode_continent( [] ),
+			'NA',
+			'do_shortcode( \'geoip-continent\' ) does not matcht expected output.'
+		);
+	}
+
+	/**
+	 * Test the do_shortcode_country function.
+	 */
+	public function testDoShortcodeCountry() {
+		$this->assertEquals(
+			Shortcodes\do_shortcode_country( [] ),
+			'US',
+			'do_shortcode( \'geoip-country\' ) does not match expected output.'
+		);
+	}
+
+	/**
+	 * Test the do_shortcode_region function.
+	 */
+	public function testDoShortcodeRegion() {
+		$this->assertEquals(
+			Shortcodes\do_shortcode_region( [] ),
+			'UT',
+			'do_shortcode( \'geoip-region\' ) does not match expected output.'
+		);
+	}
+
+	/**
+	 * Test the do_shortcode_city function.
+	 */
+	public function testDoShortcodeCity() {
+		$this->assertEquals(
+			Shortcodes\do_shortcode_city( [] ),
+			'Salt Lake City',
+			'do_shortcode( \'geoip-city\' ) does not match expected output.'
+		);
+	}
+
+	/**
+	 * Test the do_shortcode_location function.
+	 */
+	public function testDoShortcodeLocation() {
+		$this->assertEquals(
+			Shortcodes\do_shortcode_location( [] ),
+			'Salt Lake City, UT, US',
+			'do_shortcode( \'geoip-location\' ) does not match expected output.'
+		);
+	}
 }
