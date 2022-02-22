@@ -7,6 +7,8 @@
 
 namespace Pantheon\EI\WP\Shortcodes;
 
+use Pantheon\EI\WP\Geo;
+
 /**
  * Kick off the plugin.
  */
@@ -50,3 +52,82 @@ function ei_plugin_notice() {
 		</p>
 	<?php
 }
+
+/**
+ * Get all geolocation data.
+ *
+ * @return array The JSON-decoded geolocation data from the Edge Integrations plugin.
+ */
+function get_all() : array {
+	return json_decode( Geo\get_geo(), true );
+}
+
+/**
+ * Get the geolocated continent.
+ *
+ * @return string The two-letter continent code.
+ */
+function get_continent() : string {
+	return Geo\get_geo( 'continent' );
+}
+
+/**
+ * Get the geolocated country.
+ *
+ * @return string The two-letter country code.
+ */
+function get_country() : string {
+	return Geo\get_geo( 'country' );
+}
+
+/**
+ * Get the geolocated region.
+ *
+ * @return string The two-letter region code.
+ */
+function get_region() : string {
+	return Geo\get_geo( 'region' );
+}
+
+/**
+ * Get the geolocated city.
+ *
+ * @return string The city name.
+ */
+function get_city() : string {
+	return Geo\get_geo( 'city' );
+}
+
+/**
+ * Get the geolocated postal code.
+ *
+ * Note: As of WordPress Edge Integrations 0.2.x, this parameter is not available.
+ *
+ * @return string The postal code.
+ */
+function get_postal_code() : string {
+	return Geo\get_geo( 'postal-code' );
+}
+
+/**
+ * Get the geolocated latitude.
+ *
+ * Note: As of WordPress Edge Integrations 0.2.x, this parameter is not supported.
+ *
+ * @return string The latitude.
+ */
+function get_latitude() : string {
+	return Geo\get_geo( 'latitude' );
+}
+
+/**
+ * Get the geolocated longitude.
+ *
+ * Note: As of WordPress Edge Integrations 0.2.x, this parameter is not supported.
+ *
+ * @return string The longitude.
+ */
+function get_longitude() : string {
+	return Geo\get_geo( 'longitude' );
+}
+
