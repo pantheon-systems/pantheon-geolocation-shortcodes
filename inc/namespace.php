@@ -275,3 +275,102 @@ function do_shortcode_location( array $atts ) : string {
 
 	return $location;
 }
+
+/**
+ * Output the content filtered by the current location.
+ *
+ * @param array $atts The shortcode attributes.
+ * @param string $content The content that comes between the shortcode tags.
+ * @return string The HTML content.
+ */
+function do_shortcode_content( array $atts, string $content = '' ) : string {
+	$keep = true;
+	$test_parameters = [];
+	$geos = get_all();
+
+	foreach ( $atts as $label => $value ) {
+		// Set up initial negation parameters.
+		$negate = 0;
+		$inline_negate = 0;
+
+		// Check to see if the attribute has not- or not_ in it.
+		$negate = preg_match( '/not?[-_]?(.*)/', $label, $matches );
+
+		// WordPress doesn't like a dash in shortcode parameter labels.
+		// Check to see if the value has "not-" in it.
+		if ( ! $negate ) {
+			$negate = preg_match( '/not?\-([^=]+)\=\"?([^"]+)\"?/', $value, $matches );
+			$inline_negate = $negate;
+		}
+
+		$label = $negate ? $matches[1] : $label;
+		$value = $inline_negate ? $matches[2] : $value;
+
+		if ( ! isset( $geos[ $label ] ) ) {
+			continue;
+		}
+
+		$test_values = (array) explode( ',', $value );
+		$test_parameters[ $label ] = [
+			'test_values' => $test_values,
+			'negate' => $negate,
+		];
+	}
+
+	// Sort the parameters by region type, largest to smallest.
+	uksort( $test_parameters, __NAMESPACE__ . '\\compare_location_types' );
+
+	// Loop through the parameters to see if we have a match.
+	foreach ( $test_parameters as $label => $parameter ) {
+		$test_values = $parameter['test_values'];
+		$negate = $parameter['negate'];
+		$match_value = strtolower( $geos[ $label ] );
+
+		foreach ( $test_values as $test_value ) {
+			$test_value = strtolower( trim( $test_value, " \t\"." ) );
+		}
+
+		$is_match = in_array( $match_value, $test_values, true );
+		$is_match = ! $negate ? $is_match : ! $is_match;
+
+		if ( ! $is_match ) {
+			$keep = false;
+		}
+	}
+
+	if ( ! $keep ) {
+		return '';
+	}
+
+	// Handle any other shortcodes in the content.
+	$content = do_shortcode( $content );
+
+	return apply_filters( 'pantheon.ei.geo_content', $content, $atts );
+}
+
+/**
+ * Compare the location types.
+ *
+ * Used for sorting location types from largest area to smallest.
+ *
+ * @param string $a The first location type.
+ * @param string $b The second location type.
+ * @return int The comparison result.
+ */
+function compare_location_types( string $a, string $b ) : int {
+	$location_types = [
+		'continent' => 0,
+		'country' => 1,
+		'region' => 2,
+		'city' => 3,
+		// 'postalcode' => 4,
+		// 'latitude' => 5,
+		// 'longitude' => 6,
+	];
+
+	if ( isset( $location_types[ $a ] ) && isset( $location_types[ $b ] ) ) {
+		return $location_types[ $a ] - $location_types[ $b ];
+	} else {
+		return 0;
+	}
+}
