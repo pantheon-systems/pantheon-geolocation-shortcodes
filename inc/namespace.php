@@ -15,6 +15,9 @@ use Pantheon\EI\WP\Geo;
 function bootstrap() {
 	// Check if the WordPress Edge Integrations plugin exists. If it doesn't, we can't use this plugin.
 	add_action( 'admin_init', __NAMESPACE__ . '\\check_ei_plugin' );
+
+	// Register the shortcodes.
+	add_action( 'init', __NAMESPACE__ . '\\register_shortcodes' );
 }
 
 /**
@@ -131,3 +134,32 @@ function get_longitude() : string {
 	return Geo\get_geo( 'longitude' );
 }
 
+/**
+ * Get an array of all the shortcodes.
+ *
+ * @return array An array of all the shortcodes.
+ */
+function get_shortcodes() : array {
+	return [
+		'geoip-continent',
+		'geoip-country',
+		'geoip-region',
+		'geoip-city',
+		'geoip-postalcode',
+		'geoip-latitude',
+		'geoip-longitude',
+		'geoip-location',
+		'geoip-content',
+	];
+}
+
+/**
+ * Register the shortcodes.
+ */
+function register_shortcodes() {
+	foreach( get_shortcodes() as $shortcode ) {
+		if ( ! shortcode_exists( $shortcode ) ) {
+			add_shortcode( $shortcode, __NAMESPACE__ . "\\do_shortcode_$shortcode" );
+		}
+	}
+}
