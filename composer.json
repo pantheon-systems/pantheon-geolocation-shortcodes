@@ -1,0 +1,36 @@
+{
+    "name": "pantheon-systems/pantheon-geolocation-shortcodes",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/wordpress/wordpress-develop.git"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "humanmade/coding-standards": "^1.1",
+        "phpunit/phpunit": "^9.5",
+        "wordpress/wordpress": "dev-master"
+    },
+    "scripts": {
+        "lint:php": "find ./pantheon-wordpress-edge-integrations.php ./inc ./tests  -name '*.php' -exec php -l {} \\;",
+        "lint:phpcs": "vendor/bin/phpcs -s --standard=phpcs.ruleset.xml .",
+        "lint:phpcbf": "vendor/bin/phpcbf -s --standard=phpcs.ruleset.xml .",
+        "lint": "composer lint:php && composer lint:phpcs",
+        "test:unit": "vendor/bin/phpunit -c phpunit.xml",
+        "test": "composer test:unit"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

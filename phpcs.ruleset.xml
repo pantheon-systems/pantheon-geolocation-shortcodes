@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Pantheon Geolocation Shortcodes">
+	<!-- Files or directories to check -->
+	<file>.</file>
+
+	<!-- Exclude tests from linting -->
+	<exclude-pattern>tests/*</exclude-pattern>
+
+	<!-- Use HM Coding Standards -->
+	<rule ref="vendor/humanmade/coding-standards">
+		<!-- Exclude rules here using the following syntax: -->
+		<!-- <exclude name="HM.Debug.ForceShortArray" /> -->
+	</rule>
+</ruleset>
