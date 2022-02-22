@@ -141,15 +141,15 @@ function get_longitude() : string {
  */
 function get_shortcodes() : array {
 	return [
-		'geoip-continent',
-		'geoip-country',
-		'geoip-region',
-		'geoip-city',
-		'geoip-postalcode',
-		'geoip-latitude',
-		'geoip-longitude',
-		'geoip-location',
-		'geoip-content',
+		'continent' => 'geoip-continent',
+		'country' => 'geoip-country',
+		'region' => 'geoip-region',
+		'city' => 'geoip-city',
+		// 'postalcode' => 'geoip-postalcode',
+		// 'latitude' => 'geoip-latitude',
+		// 'longitude' => 'geoip-longitude',
+		'location' => 'geoip-location',
+		'content' => 'geoip-content',
 	];
 }
 
