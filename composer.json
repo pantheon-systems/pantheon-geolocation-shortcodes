@@ -18,6 +18,7 @@
     "require": {},
     "require-dev": {
         "humanmade/coding-standards": "^1.1",
+        "pantheon-systems/edge-integrations-wordpress-sdk": "*",
         "phpunit/phpunit": "^9.5",
         "wordpress/wordpress": "dev-master"
     },
@@ -36,7 +37,9 @@
     },
     "config": {
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "openeuropa/composer-artifacts": true,
+            "composer/installers": true
         }
     }
 }
