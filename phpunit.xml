@@ -3,5 +3,6 @@
 	<testsuites>
 		<testsuite name="WP Unit Tests">
 			<directory>./tests/</directory>
+		</testsuite>
 	</testsuites>
 </phpunit>
