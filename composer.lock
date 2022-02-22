@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1d2801a384e13b5f3ed2c082541cc11",
+    "content-hash": "369311a3180afe49e88300ad98d43695",
     "packages": [],
     "packages-dev": [
         {
@@ -57,149 +57,6 @@
                 "wiki": "https://github.com/Automattic/VIP-Coding-Standards/wiki"
             },
             "time": "2019-07-12T08:47:36+00:00"
-        },
-        {
-            "name": "composer/installers",
-            "version": "v2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "a241e78aaeb09781f5f5b92ac01ffd13ab43e5e8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/a241e78aaeb09781f5f5b92ac01ffd13ab43e5e8",
-                "reference": "a241e78aaeb09781f5f5b92ac01ffd13ab43e5e8",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "composer/composer": "1.6.* || ^2.0",
-                "composer/semver": "^1 || ^3",
-                "phpstan/phpstan": "^0.12.55",
-                "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^5.3",
-                "symfony/process": "^5"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Composer\\Installers\\Plugin",
-                "branch-alias": {
-                    "dev-main": "2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Installers\\": "src/Composer/Installers"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
-                }
-            ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "https://composer.github.io/installers/",
-            "keywords": [
-                "Dolibarr",
-                "Eliasis",
-                "Hurad",
-                "ImageCMS",
-                "Kanboard",
-                "Lan Management System",
-                "MODX Evo",
-                "MantisBT",
-                "Mautic",
-                "Maya",
-                "OXID",
-                "Plentymarkets",
-                "Porto",
-                "RadPHP",
-                "SMF",
-                "Starbug",
-                "Thelia",
-                "Whmcs",
-                "WolfCMS",
-                "agl",
-                "annotatecms",
-                "attogram",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "cockpit",
-                "codeigniter",
-                "concrete5",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "eZ Platform",
-                "elgg",
-                "expressionengine",
-                "fuelphp",
-                "grav",
-                "installer",
-                "itop",
-                "known",
-                "kohana",
-                "laravel",
-                "lavalite",
-                "lithium",
-                "magento",
-                "majima",
-                "mako",
-                "mediawiki",
-                "miaoxing",
-                "modulework",
-                "modx",
-                "moodle",
-                "osclass",
-                "pantheon",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "processwire",
-                "puppet",
-                "pxcms",
-                "reindex",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "sydes",
-                "sylius",
-                "tastyigniter",
-                "wordpress",
-                "yawik",
-                "zend",
-                "zikula"
-            ],
-            "support": {
-                "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v2.0.1"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-09-13T08:21:20+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -545,118 +402,23 @@
             "time": "2021-11-30T19:35:32+00:00"
         },
         {
-            "name": "openeuropa/composer-artifacts",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/openeuropa/composer-artifacts.git",
-                "reference": "11c0a02c90a854109e73211f3f3759b4a5911f5a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/composer-artifacts/zipball/11c0a02c90a854109e73211f3f3759b4a5911f5a",
-                "reference": "11c0a02c90a854109e73211f3f3759b4a5911f5a",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1 || ^2.0",
-                "php": ">=7.2"
-            },
-            "require-dev": {
-                "composer/composer": "~1.6 || ~2.0",
-                "cweagans/composer-patches": "^1.6",
-                "openeuropa/code-review": "2.x-dev",
-                "phpunit/phpunit": "^7.5"
-            },
-            "default-branch": true,
-            "type": "composer-plugin",
-            "extra": {
-                "class": "OpenEuropa\\ComposerArtifacts\\Plugin",
-                "enable-patching": true,
-                "composer-exit-on-patch-failure": true
-            },
-            "autoload": {
-                "psr-4": {
-                    "OpenEuropa\\ComposerArtifacts\\": "./src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "EUPL-1.2"
-            ],
-            "description": "Composer plugin that allows to download a specified artifact instead of the default package.",
-            "keywords": [
-                "artifacts",
-                "composer-plugin"
-            ],
-            "support": {
-                "issues": "https://github.com/openeuropa/composer-artifacts/issues",
-                "source": "https://github.com/openeuropa/composer-artifacts/tree/master"
-            },
-            "time": "2021-09-08T08:17:51+00:00"
-        },
-        {
-            "name": "pantheon-systems/edge-integrations-wordpress-sdk",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pantheon-systems/edge-integrations-wordpress-sdk.git",
-                "reference": "f7ad12b4ddaded4df4d8ef4718fa1627c087c1bd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/edge-integrations-wordpress-sdk/zipball/f7ad12b4ddaded4df4d8ef4718fa1627c087c1bd",
-                "reference": "f7ad12b4ddaded4df4d8ef4718fa1627c087c1bd",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^2.0",
-                "openeuropa/composer-artifacts": "dev-master",
-                "pantheon-systems/pantheon-edge-integrations": "*",
-                "pantheon-systems/pantheon-wordpress-edge-integrations": "^0.2"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "artifacts": {
-                    "pantheon-systems/pantheon-wordpress-edge-integrations": {
-                        "dist": {
-                            "url": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/releases/download/0.2.3/main.zip",
-                            "type": "zip"
-                        }
-                    }
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A one-stop shop for integration your WordPress site on Pantheon with advanced Edge Integrations tools.",
-            "support": {
-                "issues": "https://github.com/pantheon-systems/edge-integrations-wordpress-sdk/issues",
-                "source": "https://github.com/pantheon-systems/edge-integrations-wordpress-sdk/tree/main"
-            },
-            "time": "2022-02-22T18:03:23+00:00"
-        },
-        {
             "name": "pantheon-systems/pantheon-edge-integrations",
-            "version": "dev-main",
+            "version": "dev-use-new-header",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/pantheon-edge-integrations.git",
-                "reference": "d57349e8e13f2a13349bc0edb1df4e0ed2be9085"
+                "reference": "fbcab0f8b6893c1886c1b99ee2724ca3bd62c89a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/pantheon-edge-integrations/zipball/d57349e8e13f2a13349bc0edb1df4e0ed2be9085",
-                "reference": "d57349e8e13f2a13349bc0edb1df4e0ed2be9085",
+                "url": "https://api.github.com/repos/pantheon-systems/pantheon-edge-integrations/zipball/fbcab0f8b6893c1886c1b99ee2724ca3bd62c89a",
+                "reference": "fbcab0f8b6893c1886c1b99ee2724ca3bd62c89a",
                 "shasum": ""
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5",
                 "squizlabs/php_codesniffer": "^3.6"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -673,26 +435,26 @@
             "description": "Helper class for content personalization.",
             "support": {
                 "issues": "https://github.com/pantheon-systems/pantheon-edge-integrations/issues",
-                "source": "https://github.com/pantheon-systems/pantheon-edge-integrations/tree/main"
+                "source": "https://github.com/pantheon-systems/pantheon-edge-integrations/tree/use-new-header"
             },
-            "time": "2022-02-04T22:46:45+00:00"
+            "time": "2022-02-18T16:39:21+00:00"
         },
         {
             "name": "pantheon-systems/pantheon-wordpress-edge-integrations",
-            "version": "0.2.4",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations.git",
-                "reference": "f717b17c64de7cfb5eb57a2931e95dc0c798b89a"
+                "reference": "2b9ad914b51b1a1b043c96833790bfe698d0d0d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/pantheon-wordpress-edge-integrations/zipball/f717b17c64de7cfb5eb57a2931e95dc0c798b89a",
-                "reference": "f717b17c64de7cfb5eb57a2931e95dc0c798b89a",
+                "url": "https://api.github.com/repos/pantheon-systems/pantheon-wordpress-edge-integrations/zipball/2b9ad914b51b1a1b043c96833790bfe698d0d0d7",
+                "reference": "2b9ad914b51b1a1b043c96833790bfe698d0d0d7",
                 "shasum": ""
             },
             "require": {
-                "pantheon-systems/pantheon-edge-integrations": "dev-main"
+                "pantheon-systems/pantheon-edge-integrations": "dev-use-new-header"
             },
             "require-dev": {
                 "consolidation/robo": "^3.0",
@@ -700,6 +462,7 @@
                 "phpunit/phpunit": "^9.5",
                 "wordpress/wordpress": "dev-master"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "files": [
@@ -715,9 +478,9 @@
             "description": "WordPress plugin to support Pantheon Edge Integrations and personalization features",
             "support": {
                 "issues": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/issues",
-                "source": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/tree/0.2.4"
+                "source": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/tree/main"
             },
-            "time": "2022-02-18T17:07:14+00:00"
+            "time": "2022-02-22T20:46:12+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -2966,6 +2729,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "pantheon-systems/pantheon-wordpress-edge-integrations": 20,
         "wordpress/wordpress": 20
     },
     "prefer-stable": true,
