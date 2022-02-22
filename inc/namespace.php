@@ -120,7 +120,7 @@ function get_postal_code() : string {
  * @return string The latitude.
  */
 function get_latitude() : string {
-	return Geo\get_geo( 'latitude' );
+	return Geo\get_geo( 'lat' );
 }
 
 /**
@@ -131,7 +131,7 @@ function get_latitude() : string {
  * @return string The longitude.
  */
 function get_longitude() : string {
-	return Geo\get_geo( 'longitude' );
+	return Geo\get_geo( 'lon' );
 }
 
 /**
