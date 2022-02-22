@@ -157,9 +157,11 @@ function get_shortcodes() : array {
  * Register the shortcodes.
  */
 function register_shortcodes() {
-	foreach( get_shortcodes() as $shortcode ) {
+	foreach ( get_shortcodes() as $name => $shortcode ) {
 		if ( ! shortcode_exists( $shortcode ) ) {
-			add_shortcode( $shortcode, __NAMESPACE__ . "\\do_shortcode_$shortcode" );
+			add_shortcode( $shortcode, __NAMESPACE__ . "\\do_shortcode_$name" );
 		}
+	}
+}
 	}
 }
