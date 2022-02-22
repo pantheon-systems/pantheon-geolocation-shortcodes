@@ -1,0 +1,17 @@
+name: Pantheon Geolocation Shortcodes
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Install composer dependencies and run tests
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: composer install
+
+    - name: Run lint
+      run: composer lint
+
+    - name: Run tests
+      run: composer test
