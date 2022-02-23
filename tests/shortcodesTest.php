@@ -417,5 +417,20 @@ class shortcodesTests extends TestCase {
 			'',
 			'[geoip-content country="US, FR" not_city="Salt Lake City" not_continent="NA"] does not match expected output.'
 		);
+
+		$shortcode = [
+			'country' => 'US',
+			'not_region' => 'UT, NV',
+		];
+		$content = 'This should be visible to US visitors but not people in Utah or Nevada.';
+		// Fail if the test parameters don't match what they should be.
+		if ( Shortcodes\get_country() !== 'US' || Shortcodes\get_region() !== 'UT' ) {
+			$this->fail( 'Failing this test because the country is not US or the region is not UT.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			'',
+			'[geoip-content country="US" not_region="UT, NV"] does not match expected output.'
+		);
 	}
 }
