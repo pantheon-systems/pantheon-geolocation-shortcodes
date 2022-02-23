@@ -21,6 +21,7 @@ require_once ABSPATH . WPINC . '/default-constants.php';
 require_once ABSPATH . WPINC . '/functions.php';
 require_once ABSPATH . WPINC . '/load.php';
 require_once ABSPATH . WPINC . '/plugin.php';
+require_once ABSPATH . WPINC . '/shortcodes.php';
 wp_initial_constants();
 
 /**
