@@ -233,4 +233,189 @@ class shortcodesTests extends TestCase {
 			'do_shortcode( \'geoip-location\' ) does not match expected output.'
 		);
 	}
+
+	/**
+	 * Test the compare_location_types function.
+	 */
+	public function testCompareLocationTypes() {
+		$this->assertEquals(
+			0,
+			Shortcodes\compare_location_types( 'city', 'city' )
+		);
+
+		$this->assertEquals(
+			0,
+			Shortcodes\compare_location_types( 'planet', 'continent' )
+		);
+
+		$this->assertEquals(
+			1,
+			Shortcodes\compare_location_types( 'country', 'continent' )
+		);
+
+		$this->assertEquals(
+			2,
+			Shortcodes\compare_location_types( 'city', 'country' )
+		);
+
+		$this->assertEquals(
+			3,
+			Shortcodes\compare_location_types( 'city', 'continent' )
+		);
+
+		$this->assertEquals(
+			-3,
+			Shortcodes\compare_location_types( 'continent', 'city' )
+		);
+
+		$this->assertEquals(
+			-2,
+			Shortcodes\compare_location_types( 'country', 'city' )
+		);
+
+		$this->assertEquals(
+			-1,
+			Shortcodes\compare_location_types( 'continent', 'country' )
+		);
+	}
+
+	/**
+	 * Test the do_shortcode_content function.
+	 *
+	 * Example implementations come from WPE GeoIP's examples. These tests ensure that the shortcode works as expected for the most common best practice scenarios.
+	 */
+	public function testDoShortcodeContent() {
+		// Test country-specific content.
+		$shortcode = [ 'country' => Shortcodes\get_country() ];
+		$content = 'Your US specific content goes here';
+		// Fail if the test parameters don't match what they should be.
+		if ( $shortcode['country'] !== 'US' ) {
+			$this->fail( 'Failing this test because the country is not US.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			$content,
+			'[geoip-content country="US"] does not match expected output.'
+		);
+
+		// Set the region to something other than Utah. We shouldn't get output because the region doesn't match.
+		$shortcode = [ 'region' => 'TX, CA' ];
+		// Fail if the test parameters don't match what they should be.
+		if ( Shortcodes\get_region() !== 'UT' ) {
+			$this->fail( 'Failing this test because the region is not UT.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			'',
+			'[geoip-content region="TX, CA"] does not match expected output.'
+		);
+
+		// Set the shortcode region to the one we've established. We should get output because the region matches.
+		$shortcode = [ 'region' => Shortcodes\get_region() ];
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			$content,
+			'[geoip-content region="UT"] does not match expected output.'
+		);
+
+		// Set country and not-city. We should not get output because our city is excluded.
+		$shortcode = [
+			'country' => Shortcodes\get_country(),
+			'not_city' => Shortcodes\get_city(),
+		];
+		$content = 'Content for US visitors but not for visitors in Salt Lake City';
+		// Fail if the test parameters don't match what they should be.
+		if ( $shortcode['not_city'] !== 'Salt Lake City' ) {
+			$this->fail( 'Failing this test because the not_city is not Salt Lake City.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			'',
+			'[geoip-content country="US" not_city="Salt Lake City"] does not match expected output.'
+		);
+
+		// Now add the city and make sure we get our content.
+		$shortcode = [ 'city' => Shortcodes\get_city() ];
+		$content = 'Your Salt Lake City specific content goes here';
+		// Fail if the test parameters don't match what they should be.
+		if ( $shortcode['city'] !== 'Salt Lake City' ) {
+			$this->fail( 'Failing this test because the city is not Salt Lake City.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			$content,
+			'[geoip-content city="Salt Lake City"] does not match expected output.'
+		);
+
+		// Define the regions in the shortcode, including our region. We should see the content.
+		$shortcode = [ 'region' => 'AL, AZ, AR, CA, CO, CT, DE, FL, GA, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY' ];
+		$content = 'Free shipping on all orders over $50 in the lower 48!';
+		// Fail if the test parameters don't match what they should be.
+		if ( Shortcodes\get_region() !== 'UT' ) {
+			$this->fail( 'Failing this test because the region is not UT.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			$content,
+			'[geoip-content region="AL, AZ, AR, CA, CO, CT, DE, FL, GA, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY"] does not match expected output.'
+		);
+
+		// Test continent and not-country.
+		$shortcode = [
+			'continent' => Shortcodes\get_continent(),
+			'not_country' => 'US',
+		];
+		$content = 'This should be hidden from US visitors.';
+		// Fail if the test parameters don't match what they should be.
+		if ( Shortcodes\get_country() !== 'US' || Shortcodes\get_continent() !== 'NA' ) {
+			$this->fail( 'Failing this test because the not_country is not US or the continent is not NA.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			'',
+			'[geoip-content continent="NA" not_country="US"] does not match expected output.'
+		);
+
+		// Test excluding continents.
+		$shortcode = [ 'not_continent' => 'EU, SA' ];
+		$content = 'This should be visible to US visitors.';
+		// Fail if the test parameters don't match what they should be.
+		if ( in_array( Shortcodes\get_continent(), [ 'EU', 'SA' ], true ) ) {
+			$this->fail( 'Failing this test because the continent is not NA.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			$content,
+			'[geoip-content not_continent="EU, SA"] does not match expected output.'
+		);
+
+		// Test using multiple countries excluding a city.
+		$shortcode = [
+			'country' => 'US, FR',
+			'not_city' => Shortcodes\get_city(),
+		];
+		$content = 'This should be visible to US and FR visitors but not people in Salt Lake City.';
+		// Fail if the test parameters don't match what they should be.
+		if ( Shortcodes\get_country() !== 'US' || Shortcodes\get_city() !== 'Salt Lake City' ) {
+			$this->fail( 'Failing this test because the country is not US or the city is not Salt Lake City.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			'',
+			'[geoip-content country="US, FR" not_city="Salt Lake City"] does not match expected output.'
+		);
+
+		// Test excluding the continent.
+		$shortcode['not_continent'] = Shortcodes\get_continent();
+		$content = 'Now it won\'t be visible to anyone in North America. FR visitors will still see this.';
+		// Fail if the test parameters don't match what they should be.
+		if ( Shortcodes\get_continent() !== 'NA' ) {
+			$this->fail( 'Failing this test because the continent is not NA.' );
+		}
+		$this->assertEquals(
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
+			'',
+			'[geoip-content country="US, FR" not_city="Salt Lake City" not_continent="NA"] does not match expected output.'
+		);
+	}
 }
