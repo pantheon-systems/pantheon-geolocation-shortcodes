@@ -326,7 +326,7 @@ function do_shortcode_content( array $atts, string $content = '' ) : string {
 		$negate = $parameter['negate'];
 		$match_value = strtolower( $geos[ $label ] );
 
-		foreach ( $test_values as $test_value ) {
+		foreach ( $test_values as &$test_value ) {
 			$test_value = strtolower( trim( $test_value, " \t\"." ) );
 		}
 
