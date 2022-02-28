@@ -25,6 +25,8 @@ This plugin does _not_ install the Pantheon WordPress Edge Integrations SDK or t
 
 Addititionally, Pantheon Advanced Global CDN must be active and configured for Geolocation shortcodes to work.
 
+Any other plugins that use the `[geoip]` shortcode should be uninstalled or deactivated before using Pantheon Geolocation Shortcodes.
+
 ## Updating
 Updating the plugin depends on how you installed it. If you installed it via Composer, you can update it via Composer depending on your version constraints. See [Versions and constraints](https://getcomposer.org/doc/articles/versions.md) for more information.
 
