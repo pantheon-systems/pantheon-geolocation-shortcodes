@@ -18,7 +18,7 @@
     "require": {},
     "require-dev": {
         "humanmade/coding-standards": "^1.1",
-        "pantheon-systems/pantheon-wordpress-edge-integrations": "dev-main",
+        "pantheon-systems/pantheon-wordpress-edge-integrations": "^0.2",
         "phpunit/phpunit": "^9.5",
         "wordpress/wordpress": "dev-master"
     },

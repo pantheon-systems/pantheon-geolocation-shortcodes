@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "369311a3180afe49e88300ad98d43695",
+    "content-hash": "60e89c0d33439881279627bdd692ebad",
     "packages": [],
     "packages-dev": [
         {
@@ -403,16 +403,16 @@
         },
         {
             "name": "pantheon-systems/pantheon-edge-integrations",
-            "version": "dev-use-new-header",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/pantheon-edge-integrations.git",
-                "reference": "fbcab0f8b6893c1886c1b99ee2724ca3bd62c89a"
+                "reference": "4a6447a6d009ca8f6410390f4f0971ee7cd0de19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/pantheon-edge-integrations/zipball/fbcab0f8b6893c1886c1b99ee2724ca3bd62c89a",
-                "reference": "fbcab0f8b6893c1886c1b99ee2724ca3bd62c89a",
+                "url": "https://api.github.com/repos/pantheon-systems/pantheon-edge-integrations/zipball/4a6447a6d009ca8f6410390f4f0971ee7cd0de19",
+                "reference": "4a6447a6d009ca8f6410390f4f0971ee7cd0de19",
                 "shasum": ""
             },
             "require-dev": {
@@ -435,26 +435,26 @@
             "description": "Helper class for content personalization.",
             "support": {
                 "issues": "https://github.com/pantheon-systems/pantheon-edge-integrations/issues",
-                "source": "https://github.com/pantheon-systems/pantheon-edge-integrations/tree/use-new-header"
+                "source": "https://github.com/pantheon-systems/pantheon-edge-integrations/tree/1.0.1"
             },
-            "time": "2022-02-18T16:39:21+00:00"
+            "time": "2022-02-24T17:14:59+00:00"
         },
         {
             "name": "pantheon-systems/pantheon-wordpress-edge-integrations",
-            "version": "dev-main",
+            "version": "0.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations.git",
-                "reference": "2b9ad914b51b1a1b043c96833790bfe698d0d0d7"
+                "reference": "6d7db855733620a3694b98dfd130e1dc916324e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/pantheon-wordpress-edge-integrations/zipball/2b9ad914b51b1a1b043c96833790bfe698d0d0d7",
-                "reference": "2b9ad914b51b1a1b043c96833790bfe698d0d0d7",
+                "url": "https://api.github.com/repos/pantheon-systems/pantheon-wordpress-edge-integrations/zipball/6d7db855733620a3694b98dfd130e1dc916324e4",
+                "reference": "6d7db855733620a3694b98dfd130e1dc916324e4",
                 "shasum": ""
             },
             "require": {
-                "pantheon-systems/pantheon-edge-integrations": "dev-use-new-header"
+                "pantheon-systems/pantheon-edge-integrations": "^v1.0"
             },
             "require-dev": {
                 "consolidation/robo": "^3.0",
@@ -462,7 +462,6 @@
                 "phpunit/phpunit": "^9.5",
                 "wordpress/wordpress": "dev-master"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "files": [
@@ -478,9 +477,9 @@
             "description": "WordPress plugin to support Pantheon Edge Integrations and personalization features",
             "support": {
                 "issues": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/issues",
-                "source": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/tree/main"
+                "source": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/tree/0.2.8"
             },
-            "time": "2022-02-22T20:46:12+00:00"
+            "time": "2022-02-28T20:03:25+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -994,16 +993,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.13",
+            "version": "9.2.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "deac8540cb7bd40b2b8cfa679b76202834fd04e8"
+                "reference": "9f4d60b6afe5546421462b76cd4e633ebc364ab4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/deac8540cb7bd40b2b8cfa679b76202834fd04e8",
-                "reference": "deac8540cb7bd40b2b8cfa679b76202834fd04e8",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9f4d60b6afe5546421462b76cd4e633ebc364ab4",
+                "reference": "9f4d60b6afe5546421462b76cd4e633ebc364ab4",
                 "shasum": ""
             },
             "require": {
@@ -1059,7 +1058,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.13"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.14"
             },
             "funding": [
                 {
@@ -1067,7 +1066,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-23T17:02:38+00:00"
+            "time": "2022-02-28T12:38:02+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2467,12 +2466,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Ctype\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2729,7 +2728,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "pantheon-systems/pantheon-wordpress-edge-integrations": 20,
         "wordpress/wordpress": 20
     },
     "prefer-stable": true,
