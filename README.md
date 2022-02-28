@@ -25,6 +25,11 @@ This plugin does _not_ install the Pantheon WordPress Edge Integrations SDK or t
 
 Addititionally, Pantheon Advanced Global CDN must be active and configured for Geolocation shortcodes to work.
 
+## Updating
+Updating the plugin depends on how you installed it. If you installed it via Composer, you can update it via Composer depending on your version constraints. See [Versions and constraints](https://getcomposer.org/doc/articles/versions.md) for more information.
+
+If you installed the plugin manually, you can update it by downloading the latest release on the [Releases](https://github.com/pantheon-systems/pantheon-geolocation-shortcodes/releases) page and extracting the contents of the ZIP file into your `wp-content/plugins` directory.
+
 ## Usage
 
 You can use the following shortcodes to display geolocated content based on where the visitor is located:
