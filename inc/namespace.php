@@ -47,10 +47,14 @@ function ei_plugin_notice() {
 		<p>
 			<?php
 			printf(
-				__( 'The %1$s plugin requires the %2$s plugin to be installed and active.', 'pantheon-geolocation-shortcodes' ),
+				__( 'The %1$s plugin was not activated because it requires the %2$s plugin to be installed and active.', 'pantheon-geolocation-shortcodes' ),
 				'<strong>' . esc_html__( 'Pantheon Geolocation Shortcodes', 'pantheon-geolocation-shortcodes' ) . '</strong>',
 				'<strong>' . esc_html__( 'Pantheon WordPress Edge Integrations', 'pantheon-geolocation-shortcodes' ) . '</strong>'
 			);
+			printf(
+				__( '<a href="%s">View the installation guide</a>.', 'pantheon-geolocation-shortcodes' ),
+				'https://github.com/pantheon-systems/edge-integrations-wordpress-sdk'
+			)
 			?>
 		</p>
 	<?php
