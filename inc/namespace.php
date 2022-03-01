@@ -57,6 +57,7 @@ function ei_plugin_notice() {
 			)
 			?>
 		</p>
+	</div>
 	<?php
 }
 
