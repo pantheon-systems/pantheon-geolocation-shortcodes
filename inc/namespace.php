@@ -279,11 +279,11 @@ function do_shortcode_location() : string {
 /**
  * Output the content filtered by the current location.
  *
- * @param array $atts The shortcode attributes.
+ * @param string|array $atts The shortcode attributes.
  * @param string $content The content that comes between the shortcode tags.
  * @return string The HTML content.
  */
-function do_shortcode_content( array $atts, string $content = '' ) : string {
+function do_shortcode_content( $atts, string $content = '' ) : string {
 	$keep = true;
 	$test_parameters = [];
 	$geos = get_all();
