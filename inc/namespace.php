@@ -287,16 +287,6 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 	$keep = true;
 	$test_parameters = [];
 	$geos = get_all();
-	$atts = shortcode_atts( [
-		'continent' => '',
-		'country' => '',
-		'region' => '',
-		'city' => '',
-		'not_continent' => '',
-		'not_country' => '',
-		'not_region' => '',
-		'not_city' => '',
-	], $atts );
 
 	// If we don't have any geolocation content is empty, just bail and return an empty string.
 	if ( empty( $geos ) ) {
@@ -352,7 +342,7 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 			$keep = false;
 		}
 	}
-
+var_dump($keep);
 	if ( ! $keep ) {
 		return '';
 	}
