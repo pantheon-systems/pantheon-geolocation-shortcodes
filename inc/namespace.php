@@ -287,6 +287,16 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 	$keep = true;
 	$test_parameters = [];
 	$geos = get_all();
+	$atts = shortcode_atts( [
+		'continent' => '',
+		'country' => '',
+		'region' => '',
+		'city' => '',
+		'not_continent' => '',
+		'not_country' => '',
+		'not_region' => '',
+		'not_city' => '',
+	], $atts );
 
 	foreach ( $atts as $label => $value ) {
 		// Set up initial negation parameters.
