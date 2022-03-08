@@ -28,10 +28,15 @@ composer require pantheon-systems/pantheon-geolocation-shortcodes
 ```
 
 The package is set as a `wordpress-plugin` so it should be installed alongside other WordPress plugins in your project.
+
+### Install via WordPress.org
+
+Download the plugin from [WordPress.org](https://wordpress.org/plugins/pantheon-geolocation-shortcodes/) and upload it to your WordPress installation. Before activation, make sure you also have the [Pantheon WordPress Edge Integrations](https://wordpress.org/plugins/pantheon-wordpress-edge-integrations/) plugin installed. If it is not found, this plugin cannot activate.
 ### Install manually
 The plugin can also be installed manually like a normal plugin. Find the latest release on the [Releases](https://github.com/pantheon-systems/pantheon-geolocation-shortcodes/releases) page and download the ZIP file.
 
 Extract the contents of the ZIP file into your `wp-content/plugins` directory and upload or commit to your server.
+
 ### Requirements
 This plugin does _not_ install the Pantheon WordPress Edge Integrations SDK or the [Pantheon WordPress Edge Integrations plugin](https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations). Those must be installed separately. While the SDK is not explicitly required as a dependency, the WordPress Edge Integrations plugin _is_ required for the Geolocation plugin to function.
 
@@ -43,6 +48,8 @@ Any other plugins that use the `[geoip]` shortcode should be uninstalled or deac
 Updating the plugin depends on how you installed it. If you installed it via Composer, you can update it via Composer depending on your version constraints. See [Versions and constraints](https://getcomposer.org/doc/articles/versions.md) for more information.
 
 If you installed the plugin manually, you can update it by downloading the latest release on the [Releases](https://github.com/pantheon-systems/pantheon-geolocation-shortcodes/releases) page and extracting the contents of the ZIP file into your `wp-content/plugins` directory.
+
+If you've installed the plugin via the WordPress.org plugin repository, updates can be installed normally like other plugin updates.
 
 ## Usage
 
