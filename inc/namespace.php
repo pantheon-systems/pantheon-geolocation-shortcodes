@@ -172,10 +172,9 @@ function register_shortcodes() {
 /**
  * Output the current continent
  *
- * @param array $atts The shortcode attributes.
  * @return string The continent.
  */
-function do_shortcode_continent( array $atts ) : string {
+function do_shortcode_continent() : string {
 	$continent = get_continent();
 	if ( ! empty( $continent ) ) {
 		return $continent;
@@ -187,10 +186,9 @@ function do_shortcode_continent( array $atts ) : string {
 /**
  * Output the current country
  *
- * @param array $atts The shortcode attributes.
  * @return string The country.
  */
-function do_shortcode_country( array $atts ) : string {
+function do_shortcode_country() : string {
 	$country = get_country();
 	if ( ! empty( $country ) ) {
 		return $country;
@@ -202,10 +200,9 @@ function do_shortcode_country( array $atts ) : string {
 /**
  * Output the current region
  *
- * @param array $atts The shortcode attributes.
  * @return string The region.
  */
-function do_shortcode_region( array $atts ) : string {
+function do_shortcode_region() : string {
 	$region = get_region();
 	if ( ! empty( $region ) ) {
 		return $region;
@@ -217,10 +214,9 @@ function do_shortcode_region( array $atts ) : string {
 /**
  * Output the current city
  *
- * @param array $atts The shortcode attributes.
  * @return string The city.
  */
-function do_shortcode_city( array $atts ) : string {
+function do_shortcode_city() : string {
 	$city = get_city();
 	if ( ! empty( $city ) ) {
 		return $city;
@@ -232,10 +228,9 @@ function do_shortcode_city( array $atts ) : string {
 /**
  * Output a current human-readable location
  *
- * @param array $atts The shortcode attributes.
  * @return string The postal code.
  */
-function do_shortcode_location( array $atts ) : string {
+function do_shortcode_location() : string {
 	$city = get_city();
 	$region = get_region();
 	$country = get_country();
@@ -284,14 +279,19 @@ function do_shortcode_location( array $atts ) : string {
 /**
  * Output the content filtered by the current location.
  *
- * @param array $atts The shortcode attributes.
+ * @param string|array $atts The shortcode attributes.
  * @param string $content The content that comes between the shortcode tags.
  * @return string The HTML content.
  */
-function do_shortcode_content( array $atts, string $content = '' ) : string {
+function do_shortcode_content( $atts, string $content = '' ) : string {
 	$keep = true;
 	$test_parameters = [];
 	$geos = get_all();
+
+	// If we don't have any geolocation content is empty, just bail and return an empty string.
+	if ( empty( $geos ) ) {
+		return '';
+	}
 
 	foreach ( $atts as $label => $value ) {
 		// Set up initial negation parameters.
