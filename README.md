@@ -23,9 +23,9 @@ In order for the geolocated content to appear on your site, you must be a Panthe
 ### Install via Composer
 The recommended way to install the plugin is via Composer.
 
-```bash
+~~~bash
 composer require pantheon-systems/pantheon-geolocation-shortcodes
-```
+~~~
 
 The package is set as a `wordpress-plugin` so it should be installed alongside other WordPress plugins in your project.
 
@@ -76,24 +76,24 @@ In addition, you can also use the `geoip-content` shortcode to apply logic to co
 #### Examples
 Say you want to show content just to your US visitors. You can use the following shortcode:
 
-```
+~~~
 [geoip-content country="US"]This is content just for US visitors.[/geoip-content]
-```
+~~~
 
 Perhaps you just want to show content to visitors from specific regions. You can use the following shortcode:
 
-```
+~~~
 [geoip-content region="CA, TX"]This is content exclusively for visitors from California and Texas.[/geoip-content]
-```
+~~~
 
 You can also mix and match geography and negative geography options to add more complex logic. For example, if you wanted to show content to visitors from California and Texas, but not to visitors from Los Angeles. You can use the following shortcode:
 
-```
+~~~
 [geoip-content region="CA, TX" not_city="Los Angeles"]This is content for visitors from California and Texas, but not from Los Angeles.[/geoip-content]
-```
+~~~
 
 #### Duplicate location names
 If multiple locations in your regions have the same name, you may need to adjust the logic to ensure that the correct content is shown to the correct visitors. For example, if you were showing the same content to visitors from the United States, Europe and Australia, but wanted to exclude _Dublin_, Ireland, you would need to use the following shortcodes:
-```
+~~~
 [geoip-content country="US, AU"]Fly to Dublin, Ireland for a weekend getaway for only $199![/geoip-content][geoip-content country="EU" not_city="Dublin"]Fly to Dublin, Ireland for a weekend getaway for only $199![/geoip-content]
-```
+~~~
