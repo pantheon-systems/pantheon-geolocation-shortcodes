@@ -1,5 +1,13 @@
 # Pantheon Geolocation Shortcodes
 
+Stable tag: 0.2.0  
+Requires at least: 3.7  
+Tested up to: 5.9.1  
+Requires PHP: 7.4  
+License: MIT  
+Tags: pantheon, geolocation, shortcodes, edge integrations, agcdn, geoip, personalization  
+Contributors: jazzs3quence, getpantheon  
+
 Used with the [Pantheon WordPress Edge Integrations SDK](https://github.com/pantheon-systems/edge-integrations-wordpress-sdk), this plugin allows sites to use shortcodes to display geolocated content.
 
 [![Unsupported](https://img.shields.io/badge/pantheon-unsupported-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#unsupported) ![Pantheon Geolocation Shortcodes](https://github.com/pantheon-systems/pantheon-geolocation-shortcodes/actions/workflows/main.yml/badge.svg)
