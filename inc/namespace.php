@@ -342,7 +342,7 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 			$keep = false;
 		}
 	}
-var_dump($keep);
+
 	if ( ! $keep ) {
 		return '';
 	}
