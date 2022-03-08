@@ -11,6 +11,13 @@ Contributors: jazzs3quence, getpantheon
 Used with the [Pantheon WordPress Edge Integrations SDK](https://github.com/pantheon-systems/edge-integrations-wordpress-sdk), this plugin allows sites to use shortcodes to display geolocated content.
 
 [![Unsupported](https://img.shields.io/badge/pantheon-unsupported-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#unsupported) ![Pantheon Geolocation Shortcodes](https://github.com/pantheon-systems/pantheon-geolocation-shortcodes/actions/workflows/main.yml/badge.svg)
+
+## Description
+
+This plugin allows you to quickly add geolocated content to your site by using shortcodes. 
+
+In order for the geolocated content to appear on your site, you must be a Pantheon customer with Advanced Global CDN active on your site. In addition, you must already have the [Pantheon WordPress Edge Integrations](https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations) plugin installed.
+
 ## Installation
 
 ### Install via Composer
