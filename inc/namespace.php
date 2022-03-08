@@ -298,6 +298,11 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 		'not_city' => '',
 	], $atts );
 
+	// If we don't have any geolocation content is empty, just bail and return an empty string.
+	if ( empty( $geos ) ) {
+		return '';
+	}
+
 	foreach ( $atts as $label => $value ) {
 		// Set up initial negation parameters.
 		$negate = 0;
