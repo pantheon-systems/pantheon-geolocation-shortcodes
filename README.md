@@ -97,3 +97,5 @@ If multiple locations in your regions have the same name, you may need to adjust
 ~~~
 [geoip-content country="US, AU"]Fly to Dublin, Ireland for a weekend getaway for only $199![/geoip-content][geoip-content country="EU" not_city="Dublin"]Fly to Dublin, Ireland for a weekend getaway for only $199![/geoip-content]
 ~~~
+
+<!-- changelog -->
