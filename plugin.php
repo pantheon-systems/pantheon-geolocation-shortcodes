@@ -4,7 +4,7 @@
  * Description: Used with the Pantheon WordPress Edge Integrations SDK, allows sites to use shortcodes to display geolocated content.
  * Author: Pantheon
  * Author URI: https://pantheon.io
- * Version: 0.2.1
+ * Version: 0.2.2
  *
  * @package Pantheon/EdgeIntegrations
  */
