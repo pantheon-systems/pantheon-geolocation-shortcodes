@@ -334,9 +334,6 @@ function compare_location_types( string $a, string $b ) : int {
 		'country-code' => 1,
 		'region' => 2,
 		'city' => 3,
-		// 'postalcode' => 4,
-		// 'latitude' => 5,
-		// 'longitude' => 6,
 	];
 
 	if ( isset( $location_types[ $a ] ) && isset( $location_types[ $b ] ) ) {
