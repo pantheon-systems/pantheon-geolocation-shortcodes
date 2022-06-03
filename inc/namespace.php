@@ -307,7 +307,7 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 		}
 	}
 
-	if ( ! $keep ) {
+	if ( ! $keep || empty( $test_parameters ) ) {
 		return '';
 	}
 
