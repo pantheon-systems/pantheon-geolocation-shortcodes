@@ -330,7 +330,9 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
  */
 function compare_location_types( string $a, string $b ) : int {
 	$location_types = [
+		'continent' => 0,
 		'continent-code' => 0,
+		'country' => 1,
 		'country-code' => 1,
 		'region' => 2,
 		'city' => 3,
