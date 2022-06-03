@@ -261,6 +261,8 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 		// Set up initial negation parameters.
 		$negate = 0;
 		$inline_negate = 0;
+		$label = $label === 'country' ? 'country-code' : $label;
+		$label = $label === 'continent' ? 'continent-code' : $label;
 
 		// Check to see if the attribute has not- or not_ in it.
 		$negate = preg_match( '/not?[-_]?(.*)/', $label, $matches );
@@ -328,8 +330,8 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
  */
 function compare_location_types( string $a, string $b ) : int {
 	$location_types = [
-		'continent' => 0,
-		'country' => 1,
+		'continent-code' => 0,
+		'country-code' => 1,
 		'region' => 2,
 		'city' => 3,
 		// 'postalcode' => 4,
