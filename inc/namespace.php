@@ -253,7 +253,7 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 	$geos = get_all();
 
 	// If we don't have any geolocation content is empty, just bail and return an empty string.
-	if ( empty( $geos ) ) {
+	if ( empty( $geos ) || empty( $atts ) ) {
 		return '';
 	}
 
