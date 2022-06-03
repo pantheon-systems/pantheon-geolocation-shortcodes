@@ -107,39 +107,6 @@ function get_city() : string {
 }
 
 /**
- * Get the geolocated postal code.
- *
- * Note: As of WordPress Edge Integrations 0.2.x, this parameter is not available.
- *
- * @return string The postal code.
- */
-function get_postal_code() : string {
-	return Geo\get_geo( 'postal-code' );
-}
-
-/**
- * Get the geolocated latitude.
- *
- * Note: As of WordPress Edge Integrations 0.2.x, this parameter is not supported.
- *
- * @return string The latitude.
- */
-function get_latitude() : string {
-	return Geo\get_geo( 'lat' );
-}
-
-/**
- * Get the geolocated longitude.
- *
- * Note: As of WordPress Edge Integrations 0.2.x, this parameter is not supported.
- *
- * @return string The longitude.
- */
-function get_longitude() : string {
-	return Geo\get_geo( 'lon' );
-}
-
-/**
  * Get an array of all the shortcodes.
  *
  * @return array An array of all the shortcodes.
@@ -150,9 +117,6 @@ function get_shortcodes() : array {
 		'country' => 'geoip-country',
 		'region' => 'geoip-region',
 		'city' => 'geoip-city',
-		// 'postalcode' => 'geoip-postalcode',
-		// 'latitude' => 'geoip-latitude',
-		// 'longitude' => 'geoip-longitude',
 		'location' => 'geoip-location',
 		'content' => 'geoip-content',
 	];
