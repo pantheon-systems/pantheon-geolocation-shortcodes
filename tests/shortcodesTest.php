@@ -63,8 +63,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testGetAll() {
 		$this->assertEquals(
-			Shortcodes\get_all(),
 			json_decode( Geo\get_geo(), true ),
+			Shortcodes\get_all(),
 			'get_all() function should match JSON-decoded get_geo() function.'
 		);
 	}
@@ -74,8 +74,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testGetContinent() {
 		$this->assertEquals(
-			Shortcodes\get_continent(),
 			Geo\get_geo( 'continent' ),
+			Shortcodes\get_continent(),
 			'get_continent() function should match get_geo( \'continent\' ).'
 		);
 	}
@@ -85,8 +85,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testGetCountry() {
 		$this->assertEquals(
-			Shortcodes\get_country(),
 			Geo\get_geo( 'country' ),
+			Shortcodes\get_country(),
 			'get_country() function should match get_geo( \'country\' ).'
 		);
 	}
@@ -96,8 +96,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testGetRegion() {
 		$this->assertEquals(
-			Shortcodes\get_region(),
 			Geo\get_geo( 'region' ),
+			Shortcodes\get_region(),
 			'get_region() function should match get_geo( \'region\' ).'
 		);
 	}
@@ -107,8 +107,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testGetCity() {
 		$this->assertEquals(
-			Shortcodes\get_city(),
 			Geo\get_geo( 'city' ),
+			Shortcodes\get_city(),
 			'get_city() function should match get_geo( \'city\' ).'
 		);
 	}
@@ -187,8 +187,8 @@ class shortcodesTests extends TestCase {
 		];
 
 		$this->assertSame(
-			Shortcodes\get_shortcodes(),
 			$shortcodes,
+			Shortcodes\get_shortcodes(),
 			'get_shortcodes() function should match the expected shortcodes.'
 		);
 	}
@@ -198,8 +198,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testDoShortcodeContinent() {
 		$this->assertEquals(
-			Shortcodes\do_shortcode_continent( [] ),
 			'NA',
+			Shortcodes\do_shortcode_continent( [] ),
 			'do_shortcode( \'geoip-continent\' ) does not matcht expected output.'
 		);
 	}
@@ -209,8 +209,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testDoShortcodeCountry() {
 		$this->assertEquals(
-			Shortcodes\do_shortcode_country( [] ),
 			'US',
+			Shortcodes\do_shortcode_country( [] ),
 			'do_shortcode( \'geoip-country\' ) does not match expected output.'
 		);
 	}
@@ -220,8 +220,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testDoShortcodeRegion() {
 		$this->assertEquals(
-			Shortcodes\do_shortcode_region( [] ),
 			'UT',
+			Shortcodes\do_shortcode_region( [] ),
 			'do_shortcode( \'geoip-region\' ) does not match expected output.'
 		);
 	}
@@ -231,8 +231,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testDoShortcodeCity() {
 		$this->assertEquals(
-			Shortcodes\do_shortcode_city( [] ),
 			'Salt Lake City',
+			Shortcodes\do_shortcode_city( [] ),
 			'do_shortcode( \'geoip-city\' ) does not match expected output.'
 		);
 	}
@@ -242,8 +242,8 @@ class shortcodesTests extends TestCase {
 	 */
 	public function testDoShortcodeLocation() {
 		$this->assertEquals(
-			Shortcodes\do_shortcode_location( [] ),
 			'Salt Lake City, UT, US',
+			Shortcodes\do_shortcode_location( [] ),
 			'do_shortcode( \'geoip-location\' ) does not match expected output.'
 		);
 	}
@@ -307,8 +307,8 @@ class shortcodesTests extends TestCase {
 			$this->fail( 'Failing this test because the country is not US.' );
 		}
 		$this->assertEquals(
-			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			$content,
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'[geoip-content country="US"] does not match expected output.'
 		);
 
@@ -319,8 +319,8 @@ class shortcodesTests extends TestCase {
 			$this->fail( 'Failing this test because the region is not UT.' );
 		}
 		$this->assertEquals(
-			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'',
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'[geoip-content region="TX, CA"] does not match expected output.'
 		);
 
@@ -442,8 +442,8 @@ class shortcodesTests extends TestCase {
 			$this->fail( 'Failing this test because the country is not US or the region is not UT.' );
 		}
 		$this->assertEquals(
-			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'',
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'[geoip-content country="US" not_region="UT, NV"] does not match expected output.'
 		);
 	}
