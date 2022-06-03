@@ -76,7 +76,7 @@ function get_all() : array {
  * @return string The two-letter continent code.
  */
 function get_continent() : string {
-	return Geo\get_geo( 'continent' );
+	return Geo\get_geo( 'continent-code' );
 }
 
 /**
@@ -85,7 +85,7 @@ function get_continent() : string {
  * @return string The two-letter country code.
  */
 function get_country() : string {
-	return Geo\get_geo( 'country' );
+	return Geo\get_geo( 'country-code' );
 }
 
 /**
