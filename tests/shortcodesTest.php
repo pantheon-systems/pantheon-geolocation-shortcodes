@@ -18,17 +18,31 @@ class shortcodesTests extends TestCase {
 	 * Setup the test suite.
 	 */
 	function setUp() : void {
-		add_filter( 'pantheon.ei.parsed_geo_data', function() {
+		add_filter( 'pantheon.ei.get_all_geo', function() {
 			return [
-				'country' => 'US',
+				'country-code' => 'US',
 				'city' => 'Salt Lake City',
 				'region' => 'UT',
-				'continent' => 'NA',
+				'continent-code' => 'NA',
 				'conn-speed' => 'broadband',
 				'conn-type' => 'wired',
-				'lat' => '40.7',
-				'lon' => '-111.9',
 			];
+		} );
+
+		add_filter( 'pantheon.ei.get_geo_country-code', function() {
+			return 'US';
+		} );
+
+		add_filter( 'pantheon.ei.get_geo_continent-code', function() {
+			return 'NA';
+		} );
+
+		add_filter( 'pantheon.ei.get_geo_city', function() {
+			return 'Salt Lake City';
+		} );
+
+		add_filter( 'pantheon.ei.get_geo_region', function() {
+			return 'UT';
 		} );
 
 		parent::setUp();
