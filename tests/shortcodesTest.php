@@ -114,66 +114,6 @@ class shortcodesTests extends TestCase {
 	}
 
 	/**
-	 * Test the get_postal_code function.
-	 *
-	 * This parameter is not currently supported by the Edge Integrations plugin.
-	 */
-	public function testGetPostalCode() {
-		$postal_code = Geo\get_geo( 'postal-code' );
-
-		// This is not currently supported.
-		if ( empty( $postal_code ) ) {
-			$this->markTestSkipped( 'get_geo( \'postal-code\' ) returned false.' );
-		}
-
-		$this->assertEquals(
-			Shortcodes\get_postal_code(),
-			$postal_code,
-			'get_postal_code() function should match get_geo( \'postal-code\' ).'
-		);
-	}
-
-	/**
-	 * Test the get_latitude function.
-	 *
-	 * This parameter is not currently supported by the Edge Integrations plugin.
-	 */
-	public function testGetLatitude() {
-		$latitude = Geo\get_geo( 'lat' );
-
-		// This is not currently supported.
-		if ( empty( $latitude ) ) {
-			$this->markTestSkipped( 'get_geo( \'lat\' ) returned false.' );
-		}
-
-		$this->assertEquals(
-			Shortcodes\get_latitude(),
-			$latitude,
-			'get_latitude() function should match get_geo( \'lat\' ).'
-		);
-	}
-
-	/**
-	 * Test the get_longitude function.
-	 *
-	 * This parameter is not currently supported by the Edge Integrations plugin.
-	 */
-	public function testGetLongitude() {
-		$longitude = Geo\get_geo( 'lon' );
-
-		// This is not currently supported.
-		if ( empty( $longitude ) ) {
-			$this->markTestSkipped( 'get_geo( \'lon\' ) returned false.' );
-		}
-
-		$this->assertEquals(
-			Shortcodes\get_longitude(),
-			$longitude,
-			'get_longitude() function should match get_geo( \'lon\' ).'
-		);
-	}
-
-	/**
 	 * Test the get_shortcodes function.
 	 */
 	public function testGetShortcodes() {
