@@ -281,7 +281,7 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 			continue;
 		}
 
-		$test_values = (array) explode( ',', $value );
+		$test_values = (array) explode( ',', strtolower( $value ) );
 		$test_parameters[ $label ] = [
 			'test_values' => $test_values,
 			'negate' => $negate,
