@@ -204,7 +204,7 @@ class shortcodesTests extends TestCase {
 
 		$this->assertEquals(
 			1,
-			Shortcodes\compare_location_types( 'country', 'continent' )
+			Shortcodes\compare_location_types( 'country-code', 'continent-code' )
 		);
 
 		$this->assertEquals(
