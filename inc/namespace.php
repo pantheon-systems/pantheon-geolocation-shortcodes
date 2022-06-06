@@ -274,6 +274,9 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 			$inline_negate = $negate;
 		}
 
+		// If there is a negation, and we're negating country or continent, we need to update the label to include -code.
+		$matches[1] = $matches[1] === 'country' ? 'country-code' : $matches[1];
+		$matches[1] = $matches[1] === 'continent' ? 'continent-code' : $matches[1];
 		$label = $negate ? $matches[1] : $label;
 		$value = $inline_negate ? $matches[2] : $value;
 
