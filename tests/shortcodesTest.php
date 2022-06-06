@@ -324,9 +324,10 @@ class shortcodesTests extends TestCase {
 		if ( Shortcodes\get_country() !== 'US' || Shortcodes\get_continent() !== 'NA' ) {
 			$this->fail( 'Failing this test because the not_country is not US or the continent is not NA.' );
 		}
+
 		$this->assertEquals(
-			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'',
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'[geoip-content continent="NA" not_country="US"] does not match expected output.'
 		);
 
@@ -338,8 +339,8 @@ class shortcodesTests extends TestCase {
 			$this->fail( 'Failing this test because the continent is not NA.' );
 		}
 		$this->assertEquals(
-			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			$content,
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'[geoip-content not_continent="EU, SA"] does not match expected output.'
 		);
 
@@ -354,8 +355,8 @@ class shortcodesTests extends TestCase {
 			$this->fail( 'Failing this test because the country is not US or the city is not Salt Lake City.' );
 		}
 		$this->assertEquals(
-			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'',
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'[geoip-content country="US, FR" not_city="Salt Lake City"] does not match expected output.'
 		);
 
@@ -367,8 +368,8 @@ class shortcodesTests extends TestCase {
 			$this->fail( 'Failing this test because the continent is not NA.' );
 		}
 		$this->assertEquals(
-			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'',
+			Shortcodes\do_shortcode_content( $shortcode, $content ),
 			'[geoip-content country="US, FR" not_city="Salt Lake City" not_continent="NA"] does not match expected output.'
 		);
 
