@@ -275,9 +275,12 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 		}
 
 		// If there is a negation, and we're negating country or continent, we need to update the label to include -code.
-		$matches[1] = $matches[1] === 'country' ? 'country-code' : $matches[1];
-		$matches[1] = $matches[1] === 'continent' ? 'continent-code' : $matches[1];
-		$label = $negate ? $matches[1] : $label;
+		if ( $negate ) {
+			$matches[1] = $matches[1] === 'country' ? 'country-code' : $matches[1];
+			$matches[1] = $matches[1] === 'continent' ? 'continent-code' : $matches[1];
+			$label = $matches[1];
+		}
+
 		$value = $inline_negate ? $matches[2] : $value;
 
 		if ( ! isset( $geos[ $label ] ) ) {
