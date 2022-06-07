@@ -1,6 +1,6 @@
 {
   "name": "pantheon-geolocation-shortcodes",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Used with the Pantheon WordPress Edge Integrations SDK, allows sites to use shortcodes to display geolocated content.",
   "scripts": {
     "bump:patch": "bump patch --commit 'Version %s.' plugin.php README.md",
