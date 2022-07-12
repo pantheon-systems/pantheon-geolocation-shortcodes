@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88ca56164da3eee1fab374f2e3a16f68",
+    "content-hash": "8368d848f0521506b4a803c078585724",
     "packages": [],
     "packages-dev": [
         {
@@ -408,16 +408,16 @@
         },
         {
             "name": "pantheon-systems/pantheon-edge-integrations",
-            "version": "v1.1.0-alpha1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/pantheon-edge-integrations.git",
-                "reference": "529b95b0759efe3dc80532d005ccc87a7c41abd1"
+                "reference": "0dc752d5854aa774dbfacbed1def1628da65416e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/pantheon-edge-integrations/zipball/529b95b0759efe3dc80532d005ccc87a7c41abd1",
-                "reference": "529b95b0759efe3dc80532d005ccc87a7c41abd1",
+                "url": "https://api.github.com/repos/pantheon-systems/pantheon-edge-integrations/zipball/0dc752d5854aa774dbfacbed1def1628da65416e",
+                "reference": "0dc752d5854aa774dbfacbed1def1628da65416e",
                 "shasum": ""
             },
             "require-dev": {
@@ -440,22 +440,22 @@
             "description": "Helper class for content personalization.",
             "support": {
                 "issues": "https://github.com/pantheon-systems/pantheon-edge-integrations/issues",
-                "source": "https://github.com/pantheon-systems/pantheon-edge-integrations/tree/v1.1.0-alpha1"
+                "source": "https://github.com/pantheon-systems/pantheon-edge-integrations/tree/v1.1.0"
             },
-            "time": "2022-06-01T21:29:18+00:00"
+            "time": "2022-06-21T20:54:42+00:00"
         },
         {
             "name": "pantheon-systems/pantheon-wordpress-edge-integrations",
-            "version": "dev-ei-220-update-p13n-headers",
+            "version": "0.3.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations.git",
-                "reference": "5a6a30814146bc0edb0ada239e506b17899f2c5e"
+                "reference": "2872a1d60ac21a1c3bb07f2d8253d3718597604c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/pantheon-wordpress-edge-integrations/zipball/5a6a30814146bc0edb0ada239e506b17899f2c5e",
-                "reference": "5a6a30814146bc0edb0ada239e506b17899f2c5e",
+                "url": "https://api.github.com/repos/pantheon-systems/pantheon-wordpress-edge-integrations/zipball/2872a1d60ac21a1c3bb07f2d8253d3718597604c",
+                "reference": "2872a1d60ac21a1c3bb07f2d8253d3718597604c",
                 "shasum": ""
             },
             "require": {
@@ -485,9 +485,9 @@
             "description": "WordPress plugin to support Pantheon Edge Integrations and personalization features",
             "support": {
                 "issues": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/issues",
-                "source": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/tree/ei-220-update-p13n-headers"
+                "source": "https://github.com/pantheon-systems/pantheon-wordpress-edge-integrations/tree/0.3.0-alpha1"
             },
-            "time": "2022-06-03T20:15:29+00:00"
+            "time": "2022-06-08T16:55:18+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -1319,16 +1319,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.20",
+            "version": "9.5.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "12bc8879fb65aef2138b26fc633cb1e3620cffba"
+                "reference": "0e32b76be457de00e83213528f6bb37e2a38fcb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/12bc8879fb65aef2138b26fc633cb1e3620cffba",
-                "reference": "12bc8879fb65aef2138b26fc633cb1e3620cffba",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0e32b76be457de00e83213528f6bb37e2a38fcb1",
+                "reference": "0e32b76be457de00e83213528f6bb37e2a38fcb1",
                 "shasum": ""
             },
             "require": {
@@ -1362,7 +1362,6 @@
                 "sebastian/version": "^3.0.2"
             },
             "require-dev": {
-                "ext-pdo": "*",
                 "phpspec/prophecy-phpunit": "^2.0.1"
             },
             "suggest": {
@@ -1406,7 +1405,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.20"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.21"
             },
             "funding": [
                 {
@@ -1418,7 +1417,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-04-01T12:37:26+00:00"
+            "time": "2022-06-19T12:14:25+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -2654,7 +2653,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "pantheon-systems/pantheon-wordpress-edge-integrations": 20,
         "wordpress/wordpress": 20
     },
     "prefer-stable": true,

@@ -18,8 +18,8 @@
     "require": {},
     "require-dev": {
         "humanmade/coding-standards": "^1.1",
-        "pantheon-systems/pantheon-wordpress-edge-integrations": "dev-ei-220-update-p13n-headers",
-        "pantheon-systems/pantheon-edge-integrations": "^v1.1.0-alpha1",
+        "pantheon-systems/pantheon-wordpress-edge-integrations": "^0.3.0",
+        "pantheon-systems/pantheon-edge-integrations": "^v1.1.0",
         "phpunit/phpunit": "^9.5",
         "wordpress/wordpress": "dev-master"
     },
