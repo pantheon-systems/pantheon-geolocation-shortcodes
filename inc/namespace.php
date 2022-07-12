@@ -76,7 +76,7 @@ function get_all() : array {
  * @return string The two-letter continent code.
  */
 function get_continent() : string {
-	return Geo\get_geo( 'continent' );
+	return Geo\get_geo( 'continent-code' );
 }
 
 /**
@@ -85,7 +85,7 @@ function get_continent() : string {
  * @return string The two-letter country code.
  */
 function get_country() : string {
-	return Geo\get_geo( 'country' );
+	return Geo\get_geo( 'country-code' );
 }
 
 /**
@@ -107,39 +107,6 @@ function get_city() : string {
 }
 
 /**
- * Get the geolocated postal code.
- *
- * Note: As of WordPress Edge Integrations 0.2.x, this parameter is not available.
- *
- * @return string The postal code.
- */
-function get_postal_code() : string {
-	return Geo\get_geo( 'postal-code' );
-}
-
-/**
- * Get the geolocated latitude.
- *
- * Note: As of WordPress Edge Integrations 0.2.x, this parameter is not supported.
- *
- * @return string The latitude.
- */
-function get_latitude() : string {
-	return Geo\get_geo( 'lat' );
-}
-
-/**
- * Get the geolocated longitude.
- *
- * Note: As of WordPress Edge Integrations 0.2.x, this parameter is not supported.
- *
- * @return string The longitude.
- */
-function get_longitude() : string {
-	return Geo\get_geo( 'lon' );
-}
-
-/**
  * Get an array of all the shortcodes.
  *
  * @return array An array of all the shortcodes.
@@ -150,9 +117,6 @@ function get_shortcodes() : array {
 		'country' => 'geoip-country',
 		'region' => 'geoip-region',
 		'city' => 'geoip-city',
-		// 'postalcode' => 'geoip-postalcode',
-		// 'latitude' => 'geoip-latitude',
-		// 'longitude' => 'geoip-longitude',
 		'location' => 'geoip-location',
 		'content' => 'geoip-content',
 	];
@@ -289,7 +253,7 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 	$geos = get_all();
 
 	// If we don't have any geolocation content is empty, just bail and return an empty string.
-	if ( empty( $geos ) ) {
+	if ( empty( $geos ) || empty( $atts ) ) {
 		return '';
 	}
 
@@ -297,6 +261,8 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 		// Set up initial negation parameters.
 		$negate = 0;
 		$inline_negate = 0;
+		$label = $label === 'country' ? 'country-code' : $label;
+		$label = $label === 'continent' ? 'continent-code' : $label;
 
 		// Check to see if the attribute has not- or not_ in it.
 		$negate = preg_match( '/not?[-_]?(.*)/', $label, $matches );
@@ -308,14 +274,20 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 			$inline_negate = $negate;
 		}
 
-		$label = $negate ? $matches[1] : $label;
+		// If there is a negation, and we're negating country or continent, we need to update the label to include -code.
+		if ( $negate ) {
+			$matches[1] = $matches[1] === 'country' ? 'country-code' : $matches[1];
+			$matches[1] = $matches[1] === 'continent' ? 'continent-code' : $matches[1];
+			$label = $matches[1];
+		}
+
 		$value = $inline_negate ? $matches[2] : $value;
 
 		if ( ! isset( $geos[ $label ] ) ) {
 			continue;
 		}
 
-		$test_values = (array) explode( ',', $value );
+		$test_values = (array) explode( ',', strtolower( $value ) );
 		$test_parameters[ $label ] = [
 			'test_values' => $test_values,
 			'negate' => $negate,
@@ -343,7 +315,7 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 		}
 	}
 
-	if ( ! $keep ) {
+	if ( ! $keep || empty( $test_parameters ) ) {
 		return '';
 	}
 
@@ -365,12 +337,11 @@ function do_shortcode_content( $atts, string $content = '' ) : string {
 function compare_location_types( string $a, string $b ) : int {
 	$location_types = [
 		'continent' => 0,
+		'continent-code' => 0,
 		'country' => 1,
+		'country-code' => 1,
 		'region' => 2,
 		'city' => 3,
-		// 'postalcode' => 4,
-		// 'latitude' => 5,
-		// 'longitude' => 6,
 	];
 
 	if ( isset( $location_types[ $a ] ) && isset( $location_types[ $b ] ) ) {

@@ -1,6 +1,6 @@
 # Pantheon Geolocation Shortcodes
 
-Stable tag: 0.2.2  
+Stable tag: 0.3.0  
 Requires at least: 3.7  
 Tested up to: 5.9.1  
 Requires PHP: 7.4  
