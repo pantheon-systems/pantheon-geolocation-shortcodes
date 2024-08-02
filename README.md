@@ -10,7 +10,11 @@ Contributors: jazzs3quence, getpantheon
 
 Used with the [Pantheon WordPress Edge Integrations SDK](https://github.com/pantheon-systems/edge-integrations-wordpress-sdk), this plugin allows sites to use shortcodes to display geolocated content.
 
-[![Unsupported](https://img.shields.io/badge/pantheon-unsupported-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#unsupported) ![Pantheon Geolocation Shortcodes](https://github.com/pantheon-systems/pantheon-geolocation-shortcodes/actions/workflows/main.yml/badge.svg)
+## Archived project
+This project is **archived** as of August 2024 as it no longer receives active development.
+The architecture provided by the tools in this SDK and the related projects are still valid and will continue to work on Pantheon AGCDN. However, we will not be responding to issues or pull requests or building these tools out more than they are already.
+
+[![Unsupported](https://img.shields.io/badge/pantheon-deprecated-yellow?logo=pantheon&color=FFDC28)](https://docs.pantheon.io/oss-support-levels#deprecated) ![Pantheon Geolocation Shortcodes](https://github.com/pantheon-systems/pantheon-geolocation-shortcodes/actions/workflows/main.yml/badge.svg)
 
 ## Description
 
